@@ -74,6 +74,7 @@ jobs:
       run: php artisan key:generate
       working-directory: ./EstudarIngles
 
+
     - name: Rodando migrations
       env:
         DB_CONNECTION: mysql
