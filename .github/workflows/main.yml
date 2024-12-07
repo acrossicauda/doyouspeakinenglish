@@ -121,12 +121,12 @@ jobs:
 
 
     - name: Trocar valor API_IA_URL
-      run: sed -i "s/API_IA_URL={API_IA_URL}/API_IA_URL=${{ secrets.API_IA_URL }}/g" .env
+      run: sed -i "s/\API_IA_URL={API_IA_URL}/API_IA_URL=${{ secrets.API_IA_URL }}/g" .env
       working-directory: ./EstudarIngles
 
 
     - name: Trocar valor MAIL_ENCRYPTION
-      run: sed -i "s/API_IA_TOKEN={API_IA_TOKEN}/API_IA_TOKEN=${{ secrets.API_IA_TOKEN }}/g" .env
+      run: sed -i "s/API_IA_TOKEN={API_IA_TOKEN}/API_IA_TOKEN=${{ secrets.API_IA_TOKEN }}/\g" .env
       working-directory: ./EstudarIngles
 
     - name: Deploy via FTP
