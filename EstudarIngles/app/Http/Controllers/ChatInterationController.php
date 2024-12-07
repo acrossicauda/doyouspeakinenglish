@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 class ChatInterationController extends Controller
 {
 
-
     private $url;
 
 
