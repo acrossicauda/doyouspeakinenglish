@@ -82,7 +82,7 @@ jobs:
         DB_DATABASE: ${{ secrets.DB_DATABASE_PRD }}
         DB_PORT: 3306
         DB_USER: ${{ secrets.DB_USER }}
-        DB_PASSWORD: ${{ secrets.DB_PASS }}
+        DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
       run: php artisan migrate
       working-directory: ./EstudarIngles
 
