@@ -127,6 +127,7 @@ jobs:
 #      run: sed -i "s/MAIL_ENCRYPTION={MAIL_ENCRYPTION}/MAIL_ENCRYPTION=${{ secrets.MAIL_ENCRYPTION_PRD }}/g" .env
 #      working-directory: ./EstudarIngles
 
+
     - name: Trocar valor API_IA_URL
       run: sed -i "s/MAIL_ENCRYPTION={API_IA_URL}/API_IA_URL=${{ secrets.API_IA_URL }}/g" .env
       working-directory: ./EstudarIngles
