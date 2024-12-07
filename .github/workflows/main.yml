@@ -38,16 +38,12 @@ jobs:
       working-directory: ./EstudarIngles
 
 
-    - name: Trocar valor DB_USER
-      run: echo "DB_USERNAME=${{ secrets.DB_USER }}" >> .env
-      working-directory: ./EstudarIngles
-
     - name: Trocar valor DB_HOST
       run: sed -i "s/DB_HOST={DB_HOST}/DB_HOST=${{ secrets.DB_HOST }}/g" .env
       working-directory: ./EstudarIngles
 
-    - name: Trocar valor DB_DATBASE_PRD
-      run: sed -i "s/DB_USERNAME={DB_DATABASE}/DB_DATABASE=${{ secrets.DB_DATBASE_PRD }}/g" .env
+    - name: Trocar valor DB_DATABASE_PRD
+      run: sed -i "s/DB_USERNAME={DB_DATABASE}/DB_DATABASE=${{ secrets.DB_DATABASE_PRD }}/g" .env
       working-directory: ./EstudarIngles
 
     - name: Trocar valor DB_USERNAME
@@ -56,10 +52,6 @@ jobs:
 
     - name: Trocar valor DB_PASSWORD
       run: sed -i "s/DB_PASSWORD={DB_PASSWORD}/DB_PASSWORD=${{ secrets.DB_PASSWORD }}/g" .env
-      working-directory: ./EstudarIngles
-
-    - name: Trocar valor DB_DATABASE
-      run: sed -i "s/DB_DATABASE={DB_DATABASE}/DB_DATABASE=${{ secrets.DB_DATABASE_PRD }}/g" .env
       working-directory: ./EstudarIngles
 
     - name: Trocar valor APP_DEBUG
@@ -81,7 +73,7 @@ jobs:
         DB_HOST: ${{ secrets.DB_HOST }}
         DB_DATABASE: ${{ secrets.DB_DATABASE_PRD }}
         DB_PORT: 3306
-        DB_USER: ${{ secrets.DB_USER }}
+        DB_USER: ${{ secrets.DB_USERNAME }}
         DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
       run: php artisan migrate
       working-directory: ./EstudarIngles
