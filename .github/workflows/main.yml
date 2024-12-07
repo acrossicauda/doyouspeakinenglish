@@ -32,6 +32,7 @@ jobs:
       run: composer install
       working-directory: ./EstudarIngles
 
+
     - name: Copiar e ajustar o arquivo .env
       run: cp .env.ci .env
       working-directory: ./EstudarIngles
