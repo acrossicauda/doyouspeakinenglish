@@ -121,7 +121,7 @@ jobs:
 
 
     - name: Trocar valor API_IA_URL
-      run: sed -i "s/API_IA_URL={API_IA_URL}/API_IA_URL=${{ secrets.api_ia_url }}/g" .env
+      run: sed -i "s/API_IA_URL={API_IA_URL}/API_IA_URL=${{ secrets.API_IA_URL }}/g" .env
       working-directory: ./EstudarIngles
 
     - name: Trocar valor MAIL_ENCRYPTION
