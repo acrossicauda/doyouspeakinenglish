@@ -90,9 +90,9 @@ jobs:
       run: npm run build
       working-directory: ./EstudarIngles
 
-#    - name: Execute PHPUnit tests
-#      run: ./vendor/bin/phpunit
-#      working-directory: ./EstudarIngles
+    - name: Execute PHPUnit tests
+      run: ./vendor/bin/phpunit
+      working-directory: ./EstudarIngles
 
     # CONFIGURACAO EMAIL
 #    - name: Trocar valor MAIL_MAILER
