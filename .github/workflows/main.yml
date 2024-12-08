@@ -43,7 +43,7 @@ jobs:
       working-directory: ./EstudarIngles
 
     - name: Trocar valor DB_DATABASE_PRD
-      run: sed -i "s/DB_USERNAME={DB_DATABASE}/DB_DATABASE=${{ secrets.DB_DATABASE_PRD }}/g" .env
+      run: sed -i "s/DB_DATABASE={DB_DATABASE}/DB_DATABASE=${{ secrets.DB_DATABASE_PRD }}/g" .env
       working-directory: ./EstudarIngles
 
     - name: Trocar valor DB_USERNAME
@@ -55,7 +55,7 @@ jobs:
       working-directory: ./EstudarIngles
 
     - name: Trocar valor APP_DEBUG
-      run: sed -i "s/APP_DEBUG={APP_DEBUG}/APP_DEBUG=true/g" .env
+      run: sed -i "s/APP_DEBUG={APP_DEBUG}/APP_DEBUG=false/g" .env
       working-directory: ./EstudarIngles
 
     - name: Trocar valor APP_NAME
