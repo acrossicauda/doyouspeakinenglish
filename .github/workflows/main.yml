@@ -55,7 +55,7 @@ jobs:
       working-directory: ./EstudarIngles
 
     - name: Trocar valor APP_DEBUG
-      run: sed -i "s/APP_DEBUG={APP_DEBUG}/APP_DEBUG=false/g" .env
+      run: sed -i "s/APP_DEBUG={APP_DEBUG}/APP_DEBUG=true/g" .env
       working-directory: ./EstudarIngles
 
     - name: Trocar valor APP_NAME
