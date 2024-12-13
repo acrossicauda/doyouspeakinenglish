@@ -10,17 +10,28 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
 
-                    <div class="col-6 d-none hidden">
-                        <h1>Text To Speech</h1>
-                        <button class="btn btn-secondary" onclick="speak()"><i class="fa fa-solid fa-volume-down"></i></button>
+                    <div class="row">
+                        <div class="col-6 d-none hidden">
+                            <h1>Text To Speech</h1>
+                            <button class="btn btn-secondary" onclick="speak()"><i class="fa fa-solid fa-volume-down"></i></button>
+                        </div>
                     </div>
                     <br /><br /><br />
 
-                    <div class="col-6">
-                        <button class="btn btn-secondary" id="startButton">Start Voice Input <i class="fa fa-solid fa-microphone"></i> </button>
-                        <br /><br /><br />
-                        <div id="output"></div>
+                    <div class="row">
+                        <div class="col-4 d-flex justify-content-center">
+    {{--                        <button class="btn btn-secondary" id="startButton">Start Voice Input <i class="fa fa-solid fa-microphone"></i> </button>--}}
+                            <button class="btn btn-secondary" id="startButton">
+                                <x-microphone></x-microphone>
+                            </button>
+                            <div id="loading-audio" class="hidden">
+                                <x-loading-audio></x-loading-audio>
+                            </div>
+                            <br /><br /><br />
+                            <div id="output"></div>
+                        </div>
                     </div>
+
 
                 </div>
             </div>
@@ -70,11 +81,15 @@
     const startButton = document.getElementById('startButton');
     const outputDiv = document.getElementById('output');
 
+    const loadingAudio = document.getElementById('loading-audio');
+
     const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
     recognition.lang = 'en-US';
 
     recognition.onstart = () => {
-        startButton.textContent = 'Listening...';
+        //startButton.textContent = 'Listening...';
+        startButton.classList.add('hidden');
+        loadingAudio.classList.remove('hidden');
     };
 
     recognition.onresult = (event) => {
@@ -94,7 +109,9 @@
     recognition.onend = () => {
         //speak(outputDiv.textContent)
         setTimeout(() => {
-            startButton.innerHTML = 'Start Voice Input <i class=\"fa fa-solid fa-microphone\"></i>'
+            // startButton.innerHTML = 'Start Voice Input <i class=\"fa fa-solid fa-microphone\"></i>'
+            startButton.classList.remove('hidden');
+            loadingAudio.classList.add('hidden');
         }, 500)
     };
 
