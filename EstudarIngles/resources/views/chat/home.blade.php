@@ -8,29 +8,34 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
+                <div class="p-6 text-gray-900 d-flex">
 
-                    <div class="row">
-                        <div class="col-6 d-none hidden">
-                            <h1>Text To Speech</h1>
-                            <button class="btn btn-secondary" onclick="speak()"><i class="fa fa-solid fa-volume-down"></i></button>
-                        </div>
-                    </div>
-                    <br /><br /><br />
+                    <div class="align-self-center text-center items-center">
 
-                    <div class="row">
-                        <div class="col-4 d-flex justify-content-center">
-    {{--                        <button class="btn btn-secondary" id="startButton">Start Voice Input <i class="fa fa-solid fa-microphone"></i> </button>--}}
-                            <button class="btn btn-secondary" id="startButton">
-                                <x-microphone></x-microphone>
-                            </button>
-                            <div id="loading-audio" class="hidden">
-                                <x-loading-audio></x-loading-audio>
+                        <div class="row">
+                            <div class="col-6 d-none hidden">
+                                <h1>Text To Speech</h1>
+                                <button class="btn btn-secondary" onclick="speak()"><i class="fa fa-solid fa-volume-down"></i></button>
                             </div>
-                            <br /><br /><br />
-                            <div id="output"></div>
                         </div>
+                        <br /><br /><br />
+
+                        <div class="row">
+                            <div class="col-sm-4 d-flex justify-content-center">
+        {{--                        <button class="btn btn-secondary" id="startButton">Start Voice Input <i class="fa fa-solid fa-microphone"></i> </button>--}}
+                                <button class="btn btn-secondary" id="startButton">
+                                    <x-microphone></x-microphone>
+                                </button>
+                                <div id="loading-audio" class="hidden">
+                                    <x-loading-audio></x-loading-audio>
+                                </div>
+                                <br /><br /><br />
+                                <div id="output"></div>
+                            </div>
+                        </div>
+
                     </div>
+
 
 
                 </div>
